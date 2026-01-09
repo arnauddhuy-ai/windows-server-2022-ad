@@ -15,7 +15,7 @@ Ce TP vous permettra de :
 
 Serveur de référence : SRV-AD
 - Domaine : entreprise.local
--IP : 192.168.77.10/24
+- IP : 192.168.77.10/24
 
 ## **2. Objectifs pédagogiques**
 
