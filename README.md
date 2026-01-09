@@ -138,7 +138,7 @@ ping 192.168.77.10
 
 1. Console DNS → zone `entreprise.local` → clic droit → **Nouvel hôte (A)**
 2. Nom : `SRD-AD`
-3. IP : `192.168.77.20`
+3. IP : `192.168.77.10`
 4. Test CMD :
 
 ```cmd
