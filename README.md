@@ -1,4 +1,4 @@
-# TP : Infrastructure Active Directory, DHCP, DNS, GPO et Partages
+# TP Windows Server : Infrastructure Active Directory, DHCP, DNS, GPO et Partages
 
 ## 0. Prérequis matériels et logiciels
 
