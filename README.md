@@ -181,7 +181,7 @@ ping 192.168.77.10
 4. Test CMD :
 
 ```cmd
-nslookup SRD-AD.entreprise.local
+nslookup SRV-AD.entreprise.local
 ```
 
 ### Résultat attendu :
@@ -325,7 +325,7 @@ whoami
    - Partage réseau : Tout le monde → Lecture
    - NTFS : Tout le monde → Lecture & exécution
 
-> **Remarque :** si le serveur s'appelle SRD-AD, utiliser `\\SRV-AD\Public\wallpaper_ok.jpg`
+> **Remarque :** si le serveur s'appelle SRV-AD, utiliser `\\SRV-AD\Public\wallpaper_ok.jpg`
 
 #### 10.2.2 Création et liaison
 
