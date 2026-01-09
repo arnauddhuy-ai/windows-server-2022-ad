@@ -325,7 +325,8 @@ whoami
    - Partage réseau : Tout le monde → Lecture
    - NTFS : Tout le monde → Lecture & exécution
 
-> **Remarque :** si le serveur s'appelle SRV-AD, utiliser `\\SRV-AD\Public\wallpaper_ok.jpg`
+> **Nom du papaier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
+
 
 #### 10.2.2 Création et liaison
 
