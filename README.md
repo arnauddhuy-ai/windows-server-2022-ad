@@ -46,7 +46,6 @@ Après ce TP, vous serez capable de :
 
 > Pour ce TP : si vous n’avez pas besoin d’Internet → **Host-only**
 
----
 
 #### 3.2 Vérification réseau côté serveur
 
