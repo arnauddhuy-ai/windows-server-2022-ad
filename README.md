@@ -54,6 +54,23 @@ Après ce TP, vous serez capable de :
 ```bash
 ipconfig /all
 ```
+### 1. Configuration réseau du serveur
+Avant l'installation des rôles, le serveur a été configuré avec une adresse IP statique pour garantir la stabilité des services DNS et AD.
+
+* **Configuration IP :**
+    * **Adresse IP :** `192.168.77.10`
+    * **Masque de sous-réseau :** `255.255.255.0`
+    * **Passerelle par défaut :** `192.168.77.1` (Interface virtuelle)
+    * **Serveur DNS :** `127.0.0.1` (ou `192.168.77.10`)
+
+* **Tests de connectivité :**
+    ```cmd
+    ipconfig /all
+    ping 192.168.77.10
+    ```
+
+> **Astuce TSSR :** Toujours valider la connectivité entre le futur contrôleur de domaine et un poste client (via un ping) avant de lancer la promotion du domaine.
+
 
 
 
