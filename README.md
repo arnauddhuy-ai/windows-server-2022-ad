@@ -30,18 +30,31 @@ Après ce TP, vous serez capable de :
 - Comprendre l’importance de la centralisation et de la sécurité dans une infrastructure d’entreprise
 
 
-## **3. Vérification de la configuration réseau de la VM**
-   
-### **3.1 Dans VMware**
+### 3. Vérification de la configuration réseau de la VM
 
-1. Sélectionnez votre VM Windows Server (SRV-AD)
-2. Menu : VM > Settings > Network Adapter
-3. Vérifiez le mode réseau :
-   
-Mode	Usage pour le TP
-Bridged	VM sur le réseau physique réel
-NAT	VM partage l’IP de l’hôte pour Internet
-Host-only	VM isolée mais communique avec hôte et autres VMs
+#### 3.1 Dans VMware
+
+1. Sélectionnez votre VM Windows Server (`SRV-AD`)  
+2. Menu : `VM > Settings > Network Adapter`  
+3. Vérifiez le **mode réseau** :
+
+| Mode      | Usage pour le TP                                   |
+|-----------|--------------------------------------------------|
+| Bridged   | VM sur le réseau physique réel                   |
+| NAT       | VM partage l’IP de l’hôte pour Internet         |
+| Host-only | VM isolée mais communique avec l’hôte et autres VMs |
+
+> Pour ce TP : si vous n’avez pas besoin d’Internet → **Host-only**
+
+---
+
+#### 3.2 Vérification réseau côté serveur
+
+- Ouvrir **CMD** et exécuter :
+
+```bash
+ipconfig /all
+
 
 
 
