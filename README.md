@@ -306,7 +306,8 @@ whoami
 - Cocher : **Créer un dossier pour chaque utilisateur sous le chemin d'accès racine**
 - Chemin racine : `\\SRV-AD\Compta`
 
-> ### Résultat attendu :
+### Résultat attendu :
+
 > pour chaque utilisateur de l'OU Comptabilité, un dossier `\\SRV-AD\Compta\nom_utilisateur` est créé automatiquement et le dossier Documents est redirigé.
 
 ---
