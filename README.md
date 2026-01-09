@@ -176,8 +176,8 @@ ping 192.168.77.10
 ### 6.2 Création d'un enregistrement A
 
 1. Console DNS → zone `entreprise.local` → clic droit → **Nouvel hôte (A)**
-2. Nom : `SRD-AD`
-3. IP : `192.168.77.20`
+2. Nom : `SRV-AD`
+3. IP : `192.168.77.10`
 4. Test CMD :
 
 ```cmd
@@ -325,7 +325,7 @@ whoami
    - Partage réseau : Tout le monde → Lecture
    - NTFS : Tout le monde → Lecture & exécution
 
-> **Remarque :** si le serveur s'appelle SRD-AD, utiliser `\\SRD-AD\Public\wallpaper_ok.jpg`
+> **Remarque :** si le serveur s'appelle SRD-AD, utiliser `\\SRV-AD\Public\wallpaper_ok.jpg`
 
 #### 10.2.2 Création et liaison
 
