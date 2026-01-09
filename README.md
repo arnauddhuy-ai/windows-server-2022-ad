@@ -1,5 +1,5 @@
 
-#*Infrastructure Active Directory, DHCP, DNS , GPO et Partages*
+# **Infrastructure Active Directory, DHCP, DNS , GPO et Partages**
 
 
 ## **1. Introduction**
