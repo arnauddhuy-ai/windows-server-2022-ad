@@ -361,7 +361,9 @@ Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau`
 - Nom du papier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
 - Style : *Remplir* ou *Étendre*
 
-> **Résultat attendu :** le fond d'écran s'applique automatiquement pour tous les utilisateurs
+### Résultat attendu :
+
+> Le fond d'écran s'applique automatiquement pour tous les utilisateurs
 
 ---
 
