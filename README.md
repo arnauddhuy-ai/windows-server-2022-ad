@@ -1,5 +1,44 @@
-
 # TP : Infrastructure Active Directory, DHCP, DNS, GPO et Partages
+
+## 0. Prérequis matériels et logiciels
+
+### 0.1 Machines virtuelles nécessaires
+
+**Configuration minimale :**
+- **1 serveur** : Windows Server 2022 (SRV-AD)
+- **2 postes clients** : Windows 10 ou Windows 11
+
+**Configuration recommandée pour tests complets :**
+- **1 serveur** : Windows Server 2022 (SRV-AD)
+- **4 postes clients** : Windows 10 ou Windows 11 (un par OU : Comptabilité, RH, IT, Stagiaires)
+
+### 0.2 Spécifications techniques
+
+| Machine | Système d'exploitation | RAM | Disque dur | Processeur | Réseau |
+|---------|------------------------|-----|------------|------------|--------|
+| **SRV-AD** | Windows Server 2022 | 4 GB | 60 GB | 2 vCPU | Host-only |
+| **Clients** | Windows 10/11 | 2 GB | 40 GB | 1-2 vCPU | Host-only |
+
+### 0.3 Logiciels requis
+
+- **VMware Workstation** (ou VMware Player, VirtualBox)
+- **ISO Windows Server 2022**
+- **ISO Windows 10/11**
+
+### 0.4 État initial requis
+
+Avant de commencer ce TP, le serveur **SRV-AD** doit avoir :
+- ✅ Windows Server 2022 installé
+- ✅ Rôle **AD DS** installé et configuré
+- ✅ Serveur promu en **contrôleur de domaine** pour le domaine `entreprise.local`
+- ✅ Nom de machine : `SRV-AD`
+- ⚠️ Les rôles DHCP et DNS seront installés durant ce TP
+
+### 0.5 Durée estimée
+
+**3 à 4 heures** (selon le nombre de clients et l'expérience)
+
+---
 
 ## 1. Introduction
 
@@ -138,7 +177,7 @@ ping 192.168.77.10
 
 1. Console DNS → zone `entreprise.local` → clic droit → **Nouvel hôte (A)**
 2. Nom : `SRD-AD`
-3. IP : `192.168.77.10`
+3. IP : `192.168.77.20`
 4. Test CMD :
 
 ```cmd
@@ -372,5 +411,3 @@ Ce TP vous a permis de mettre en place une infrastructure complète de gestion c
 - L'application de politiques de sécurité et de personnalisation via GPO
 
 Cette infrastructure constitue la base d'une gestion moderne et sécurisée d'un parc informatique d'entreprise.
-
-
