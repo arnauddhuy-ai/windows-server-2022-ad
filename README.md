@@ -327,7 +327,7 @@ whoami
    - Partage réseau : Tout le monde → Lecture
    - NTFS : Tout le monde → Lecture & exécution
 
-> Nom du papaier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
+> Nom du papier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
 
 
 #### 10.2.2 Création et liaison
