@@ -308,7 +308,7 @@ whoami
 
 ### Résultat attendu :
 
-> pour chaque utilisateur de l'OU Comptabilité, un dossier `\\SRV-AD\Compta\nom_utilisateur` est créé automatiquement et le dossier Documents est redirigé.
+> Pour chaque utilisateur de l'OU Comptabilité, un dossier `\\SRV-AD\Compta\nom_utilisateur` est créé automatiquement et le dossier Documents est redirigé.
 
 ---
 
@@ -350,7 +350,9 @@ Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau`
 | Cacher l'icône Internet Explorer sur le Bureau | Activé | Masquée |
 | Cacher l'icône Emplacements réseau sur le Bureau | Activé | Masquée |
 
-> **Résultat attendu :** seuls Poste de travail et Corbeille sont visibles après reconnexion
+### Résultat attendu :
+
+> Seuls Poste de travail et Corbeille sont visibles après reconnexion
 
 **2. Appliquer le fond d'écran**
 
