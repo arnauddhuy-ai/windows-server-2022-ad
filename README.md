@@ -28,11 +28,11 @@
 ### 0.4 État initial requis
 
 Avant de commencer ce TP, le serveur **SRV-AD** doit avoir :
-- ✅ Windows Server 2022 installé
-- ✅ Rôle **AD DS** installé et configuré
-- ✅ Serveur promu en **contrôleur de domaine** pour le domaine `entreprise.local`
-- ✅ Nom de machine : `SRV-AD`
-- ⚠️ Les rôles DHCP et DNS seront installés durant ce TP
+- Windows Server 2022 installé
+- Rôle **AD DS** installé et configuré
+- Serveur promu en **contrôleur de domaine** pour le domaine `entreprise.local`
+- Nom de machine : `SRV-AD`
+- Les rôles DHCP et DNS seront installés durant ce TP
 
 ### 0.5 Durée estimée
 
