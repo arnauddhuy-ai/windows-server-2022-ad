@@ -195,7 +195,7 @@ nslookup SRV-AD.entreprise.local
 ## 7. Organisation Active Directory
 
 ### 7.1 Création des OU
-our structurer l'annuaire, j'ai mis en place une unité parente nommée **GPO-Entreprise**, laquelle contient des sous-unités par service. Cette hiérarchie facilite la délégation et l'application ciblée des stratégies de groupe.
+Pour structurer l'annuaire, j'ai mis en place une unité parente nommée **GPO-Entreprise**, laquelle contient des sous-unités par service. Cette hiérarchie facilite la délégation et l'application ciblée des stratégies de groupe.
 
 **GPO-Entreprise** (Unité parente)
 - Comptabilité
