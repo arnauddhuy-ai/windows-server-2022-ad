@@ -115,6 +115,12 @@ ipconfig /all
 ipconfig /all
 ping 192.168.77.10
 ```
+[!TIP]
+> **Astuce Dépannage (Connectivité Client/Serveur) :**
+> Si le client ne répond pas au ping du serveur alors que l'inverse fonctionne, il est nécessaire d'autoriser le protocole ICMPv4 dans le pare-feu du poste client :
+> 1. Ouvrir les **Paramètres avancés du pare-feu** sur le poste client.
+> 2. Dans les **Règles de trafic entrant**, localiser et activer la règle : `Partage de fichiers et d'imprimantes (Demande d'écho - ICMPv4-Entrant)`.
+
 
 ### Astuce :
 
