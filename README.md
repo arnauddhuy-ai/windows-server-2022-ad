@@ -319,25 +319,25 @@ whoami
 
 #### 10.2.1 Préparation du fond d'écran
 
-1. Sur un poste client (ex. `cdupont`) :
-   - Ouvrir `\\SRV-AD\Public\wallpaper.jpg` avec Paint
-   - Enregistrer sous JPEG : `C:\Temp\wallpaper_ok.jpg`
-   - Vérifier l'affichage
-2. Copier sur le serveur :
-   - Créer/ouvrir `C:\Public`
-   - Copier `wallpaper_ok.jpg`
-3. Permissions :
-   - Partage réseau : Tout le monde → Lecture
-   - NTFS : Tout le monde → Lecture & exécution
+   - Conception : Sur le serveur **SRV-AD**, utilisez **Paint** pour créer une image personnalisée. 
+   - Enregistrement : Sauvegardez le fichier sous le nom wallpaper_ok.jpg dans le dossier C:\\Partages\\Public.
+   - Permissions NTFS : Assurez-vous que le groupe Tout le monde possède les droits de Lecture sur le fichier pour éviter l'écran noir
+   - Test d'accès : L'image doit pouvoir s'ouvrir sur le poste client en tapant \\\\SRV-AD\\Public\\wallpaper_ok.jpg dans la commande Exécuter (Win+R).
 
-> Nom du papier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
+#### 10.2.2 Mappage Réseau Automatique (Lecteur Z:)
 
+- Chemin : Configuration utilisateur > Préférences > Paramètres Windows > Mappage de lecteurs.
+- Configuration:
+  
+    - Action : Mettre à jour (Update).
+        
+    - Emplacement : `\\SRV-AD\Public`.
+        
+    - Lettre de lecteur : Z:.
+        
+    - Libellé : Partage Public.
+        
 
-#### 10.2.2 Création et liaison
-
-- Ouvrir **GPMC**
-- Clic droit sur l'OU **Stagiaires → Créer une GPO et la lier ici**
-- Nommer : `Stagiaires_Politique`
 
 #### 10.2.3 Paramétrages
 
