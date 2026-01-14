@@ -333,7 +333,7 @@ whoami
         
     - Emplacement : `\\SRV-AD\Public`.
         
-    - Lettre de lecteur : Z:.
+    - Lettre de lecteur : Z: .
         
     - Libellé : Partage Public.
         
@@ -341,7 +341,20 @@ whoami
 
 #### 10.2.3 Paramétrages
 
-**1. Limiter les icônes du Bureau**
+**1. Appliquer le fond d'écran**
+
+- Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau → Bureau → Fond d'écran`
+- Activer la stratégie
+- Nom du papier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
+- Style : *Remplir* ou *Étendre*
+
+**2. Sécurité et Verrouillage**
+
+-`Configuration utilisateur` > `Modèles d'administration` > `Panneau de configuration` > `Personnalisation`.
+- Paramètre : Empêcher de modifier l'arrière-plan du Bureau** réglé sur **Activé**.
+
+
+**3. Limiter les icônes du Bureau**
 
 Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau`
 
@@ -357,16 +370,23 @@ Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau`
 
 > Seuls Poste de travail et Corbeille sont visibles après reconnexion
 
-**2. Appliquer le fond d'écran**
+**4.Délégation et Application Finale**
 
-- Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau → Bureau → Fond d'écran`
-- Activer la stratégie
-- Nom du papier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
-- Style : *Remplir* ou *Étendre*
+Délégation : Dans l'onglet **Délégation**, ajoutez le groupe **« Ordinateurs du domaine »** avec le droit **Lecture** pour permettre le chargement de l'image au démarrage.
+    
+Application Client :
+    
+    1. Sur le poste de **jmartin**, lancez `gpupdate /force`.
+        
+    2. Si l'image ne s'affiche pas immédiatement, videz le cache dans `%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper`.
+        
+    3. **Redémarrez l'ordinateur** pour valider le mappage Z: et le fond d'écran.
 
 ### Résultat attendu :
 
-> Le fond d'écran s'applique automatiquement pour tous les utilisateurs
+> wallpaper_ok.jpg appliqué pour tous les stagiaires.
+
+
 
 ---
 
