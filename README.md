@@ -5,47 +5,46 @@
 ### 0.1 Machines virtuelles nécessaires
 
 **Configuration minimale :**
-- **1 serveur** : Windows Server 2022 (SRV-AD)
-- **2 postes clients** : Windows 10 ou Windows 11
+- 1 serveur : Windows Server 2022 (SRV-AD)
+- 2 postes clients : Windows 10 ou Windows 11
 
 **Configuration recommandée pour tests complets :**
-- **1 serveur** : Windows Server 2022 (SRV-AD)
-- **4 postes clients** : Windows 10 ou Windows 11 (un par OU : Comptabilité, RH, IT, Stagiaires)
+- 1 serveur : Windows Server 2022 (SRV-AD)
+- 4 postes clients : Windows 10 ou Windows 11 (un par OU : Comptabilité, RH, IT, Stagiaires)
 
 ### 0.2 Spécifications techniques
 
 | Machine | Système d'exploitation | RAM | Disque dur | Processeur | Réseau |
 |---------|------------------------|-----|------------|------------|--------|
-| **SRV-AD** | Windows Server 2022 | 4 GB | 60 GB | 2 vCPU | Host-only |
-| **Clients** | Windows 10/11 | 2 GB | 40 GB | 1-2 vCPU | Host-only |
+| SRV-AD | Windows Server 2022 | 4 GB | 60 GB | 2 vCPU | Host-only |
+| Clients | Windows 10/11 | 2 GB | 40 GB | 1-2 vCPU | Host-only |
 
 ### 0.3 Logiciels requis
 
-- **VMware Workstation** (ou VMware Player, VirtualBox)
-- **ISO Windows Server 2022**
-- **ISO Windows 10/11**
+- VMware Workstation (ou VMware Player, VirtualBox)
+- ISO Windows Server 2022
+- ISO Windows 10/11
 
 ### 0.4 État initial requis
 
-Avant de commencer ce TP, le serveur **SRV-AD** doit avoir :
+Avant de commencer ce TP, le serveur SRV-AD doit avoir :
 - Windows Server 2022 installé
-- Rôle **AD DS** installé et configuré
-- Serveur promu en **contrôleur de domaine** pour le domaine `entreprise.local`
-- Nom de machine : `SRV-AD`
+- Rôle AD DS installé et configuré
+- Serveur promu en contrôleur de domaine pour le domaine `entreprise.local`
+- Nom de machine : SRV-AD
 - Les rôles DHCP et DNS seront installés durant ce TP
 
 ### 0.5 Durée estimée
 
-**3 à 4 heures** (selon le nombre de clients et l'expérience)
+3 à 4 heures (selon le nombre de clients et l'expérience)
 
 ---
 
 ## 1. Introduction
 
-Dans une PME de 100 postes, l'entreprise souhaite centraliser la gestion des utilisateurs, des ressources et de la sécurité via un serveur Windows Server 2022 configuré en **contrôleur de domaine**.
+Dans une PME de 100 postes, l'entreprise souhaite centraliser la gestion des utilisateurs, des ressources et de la sécurité via un serveur Windows Server 2022 configuré en contrôleur de domaine.
 
 Ce TP vous permettra de :
-
 - Compléter et configurer l'infrastructure Active Directory existante
 - Déployer et tester DHCP et DNS
 - Organiser les OU et groupes de sécurité
@@ -53,8 +52,7 @@ Ce TP vous permettra de :
 - Appliquer des GPO pour sécuriser et personnaliser les postes clients
 - Vérifier et valider toute l'infrastructure
 
-**Serveur de référence :** `SRV-AD`
-
+**Serveur de référence : SRV-AD**
 - Domaine : `entreprise.local`
 - IP : `192.168.77.10/24`
 
@@ -63,12 +61,11 @@ Ce TP vous permettra de :
 ## 2. Objectifs pédagogiques
 
 Après ce TP, vous serez capable de :
-
 - Vérifier et configurer la connectivité réseau des serveurs et postes clients
-- Installer et configurer les rôles **DHCP** et **DNS** sur Windows Server 2022
-- Organiser et structurer un domaine **Active Directory** avec OU, utilisateurs et groupes de sécurité
-- Créer des **partages réseau** avec permissions combinées NTFS et partage
-- Appliquer des **GPO ciblées** pour sécuriser et personnaliser les postes clients
+- Installer et configurer les rôles DHCP et DNS sur Windows Server 2022
+- Organiser et structurer un domaine Active Directory avec OU, utilisateurs et groupes de sécurité
+- Créer des partages réseau avec permissions combinées NTFS et partage
+- Appliquer des GPO ciblées pour sécuriser et personnaliser les postes clients
 - Tester et valider le fonctionnement des services et des politiques appliquées
 - Comprendre l'importance de la centralisation et de la sécurité dans une infrastructure d'entreprise
 
@@ -78,9 +75,9 @@ Après ce TP, vous serez capable de :
 
 ### 3.1 Dans VMware
 
-1. Sélectionnez votre VM Windows Server (**SRV-AD**)
+1. Sélectionnez votre VM Windows Server (SRV-AD)
 2. Menu : **VM > Settings > Network Adapter**
-3. Vérifiez le **mode réseau** :
+3. Vérifiez le mode réseau :
 
 | Mode | Usage pour le TP |
 |------|------------------|
@@ -88,39 +85,35 @@ Après ce TP, vous serez capable de :
 | NAT | VM partage l'IP de l'hôte pour Internet |
 | Host-only | VM isolée mais communique avec hôte et autres VMs |
 
-> **Pour ce TP :** si pas besoin d'Internet → Host-only
+**Pour ce TP :** si pas besoin d'Internet → **Host-only**
 
 ### 3.2 Vérification réseau côté serveur
-
-CMD :
 
 ```cmd
 ipconfig /all
 ```
 
-> **Vérifiez** que le serveur utilise **son IP comme DNS** (192.168.77.10)
+Vérifiez que le serveur utilise son IP comme DNS (`192.168.77.10`)
 
 ---
 
 ## 4. Configuration de l'adresse IP fixe du serveur
 
+**Paramètres réseau :**
 - IP : `192.168.77.10`
 - Masque : `255.255.255.0`
 - Passerelle : `192.168.77.1` (fictive en host-only)
 - DNS : `192.168.77.10`
 
-### Vérification CMD :
-
+**Vérification CMD :**
 ```cmd
 ipconfig /all
 ping 192.168.77.10
 ```
 
-### Astuce :
-> Si le client ne répond pas au ping du serveur, il est alors nécessaire d'autoriser le protocole ICMPv4 dans le pare-feu du poste client :
-> 1. Ouvrir les **Paramètres avancés du pare-feu** sur le poste client.
-> 2. Dans les **Règles de trafic entrant**, localiser et activer la règle : Partage de fichiers et d'imprimantes (Demande d'écho - ICMPv4-Entrant).
-
+**Astuce :** Si le client ne répond pas au ping du serveur, il est nécessaire d'autoriser le protocole ICMPv4 dans le pare-feu du poste client :
+1. Ouvrir les Paramètres avancés du pare-feu sur le poste client
+2. Dans les Règles de trafic entrant, localiser et activer la règle : **Partage de fichiers et d'imprimantes (Demande d'écho - ICMPv4-Entrant)**
 
 ---
 
@@ -128,31 +121,30 @@ ping 192.168.77.10
 
 ### 5.1 Installation du rôle
 
-1. **Gestionnaire de serveur → Ajouter rôles et fonctionnalités**
-2. Sélectionnez **DHCP Server → Installer**
+1. Gestionnaire de serveur → Ajouter rôles et fonctionnalités
+2. Sélectionnez **DHCP Server** → Installer
 3. Autorisez DHCP dans Active Directory
 
 ### 5.2 Création de l'étendue DHCP
 
-1. Ouvrez console **DHCP**
+1. Ouvrez console DHCP
 2. IPv4 → clic droit → **Nouvelle étendue**
 3. Paramètres :
    - Nom : `Etendue_VM`
-   - Plage IP : `192.168.77.100 → 192.168.77.200`
+   - Plage IP : `192.168.77.100` → `192.168.77.200`
    - Masque : `255.255.255.0`
    - Passerelle (Option 003) : `192.168.77.1`
    - DNS préféré (Option 006) : `192.168.77.10`
 
 ### 5.3 Réservation DHCP
 
-Exemple imprimante :
-
+**Exemple imprimante :**
 - MAC : `00:11:22:33:44:55`
 - IP réservée : `192.168.77.150`
 
 ### 5.4 Vérification côté client
 
-1. Carte réseau → **Obtenir IP automatiquement**
+1. Carte réseau → Obtenir IP automatiquement
 2. CMD :
 
 ```cmd
@@ -162,9 +154,7 @@ ipconfig /all
 ping 192.168.77.10
 ```
 
-### Vérifiez :
-
-> IP dans la plage, passerelle correcte, DNS = serveur AD
+**Vérifiez :** IP dans la plage, passerelle correcte, DNS = serveur AD
 
 ---
 
@@ -186,9 +176,7 @@ ping 192.168.77.10
 nslookup SRV-AD.entreprise.local
 ```
 
-### Résultat attendu :
-
-> IP correcte
+**Résultat attendu :** IP correcte
 
 ---
 
@@ -202,7 +190,7 @@ nslookup SRV-AD.entreprise.local
 - IT
 - Stagiaires
 
-> Facilite la délégation et l'application ciblée des GPO
+*Facilite la délégation et l'application ciblée des GPO*
 
 ### 7.2 Création des utilisateurs
 
@@ -225,7 +213,6 @@ nslookup SRV-AD.entreprise.local
 ### 8.1 Création des dossiers partagés
 
 Sur SRV-AD, créer :
-
 ```
 C:\Partages\Compta
 C:\Partages\RH
@@ -250,9 +237,7 @@ C:\Partages\Public
 | Public | G_IT | Modifier |
 | Public | Tout le monde | Lecture seule |
 
-### Résultat attendu :
-
-> Chaque groupe accède uniquement à ses ressources.
+**Résultat attendu :** Chaque groupe accède uniquement à ses ressources.
 
 ---
 
@@ -264,9 +249,7 @@ C:\Partages\Public
 ipconfig /all
 ```
 
-### Doit être :
-
-> 192.168.77.10
+Doit être : `192.168.77.10`
 
 ### 9.2 Ajouter le poste au domaine
 
@@ -278,9 +261,7 @@ ipconfig /all
 whoami
 ```
 
-### Résultat attendu :
-
-> entreprise\utilisateur
+**Résultat attendu :** `entreprise\utilisateur`
 
 ---
 
@@ -290,73 +271,62 @@ whoami
 
 #### 10.1.1 Création et liaison
 
-- Ouvrir **GPMC** sur SRV-AD
-- Naviguer : `Domaines → entreprise.local → OU Comptabilité`
-- Clic droit → **Créer une GPO dans ce domaine et la lier ici**
-- Nommer : `Comptabilité_Politique`
+1. Ouvrir GPMC sur SRV-AD
+2. Naviguer : **Domaines → entreprise.local → OU Comptabilité**
+3. Clic droit → **Créer une GPO dans ce domaine et la lier ici**
+4. Nommer : `Comptabilité_Politique`
 
 #### 10.1.2 Paramétrages
 
 **1. Interdire l'accès au Panneau de configuration**
 
-- Naviguer : `Configuration utilisateur → Modèles d'administration → Panneau de configuration`
+- Naviguer : **Configuration utilisateur → Modèles d'administration → Panneau de configuration**
 - Paramètre : **Activé**
 
 **2. Redirection du dossier Documents**
 
-- Naviguer : `Configuration utilisateur → Stratégies → Paramètres Windows → Redirection de dossiers → Documents`
+- Naviguer : **Configuration utilisateur → Stratégies → Paramètres Windows → Redirection de dossiers → Documents**
 - Type : **De base – Rediriger le dossier Documents de tout le monde vers le même emplacement**
 - Cocher : **Créer un dossier pour chaque utilisateur sous le chemin d'accès racine**
 - Chemin racine : `\\SRV-AD\Compta`
 
-### Résultat attendu :
-
-> Pour chaque utilisateur de l'OU Comptabilité, un dossier `\\SRV-AD\Compta\nom_utilisateur` est créé automatiquement et le dossier Documents est redirigé.
-
----
+**Résultat attendu :** Pour chaque utilisateur de l'OU Comptabilité, un dossier `\\SRV-AD\Compta\nom_utilisateur` est créé automatiquement et le dossier Documents est redirigé.
 
 ### 10.2 GPO Stagiaires_Politique
 
 #### 10.2.1 Préparation du fond d'écran
 
-   - Conception : Sur le serveur **SRV-AD**, utilisez **Paint** pour créer une image personnalisée. 
-   - Enregistrement : Sauvegardez le fichier sous le nom wallpaper_ok.jpg dans le dossier C:\\Partages\\Public.
-   - Permissions NTFS : Assurez-vous que le groupe Tout le monde possède les droits de Lecture sur le fichier pour éviter l'écran noir
-   - Test d'accès : L'image doit pouvoir s'ouvrir sur le poste client en tapant \\\\SRV-AD\\Public\\wallpaper_ok.jpg dans la commande Exécuter (Win+R).
+1. **Conception :** Sur le serveur SRV-AD, utilisez Paint pour créer une image personnalisée
+2. **Enregistrement :** Sauvegardez le fichier sous le nom `wallpaper_ok.jpg` dans le dossier `C:\Partages\Public`
+3. **Permissions NTFS :** Assurez-vous que le groupe **Tout le monde** possède les droits de **Lecture** sur le fichier pour éviter l'écran noir
+4. **Test d'accès :** L'image doit pouvoir s'ouvrir sur le poste client en tapant `\\SRV-AD\Public\wallpaper_ok.jpg` dans la commande Exécuter (Win+R)
 
 #### 10.2.2 Mappage Réseau Automatique (Lecteur Z:)
 
-- Chemin : Configuration utilisateur > Préférences > Paramètres Windows > Mappage de lecteurs.
-- Configuration:
-  
-    - Action : Mettre à jour (Update).
-        
-    - Emplacement : `\\SRV-AD\Public`.
-        
-    - Lettre de lecteur : Z: .
-        
-    - Libellé : Partage Public.
-        
-
+- Chemin : **Configuration utilisateur > Préférences > Paramètres Windows > Mappage de lecteurs**
+- Configuration :
+  - Action : **Mettre à jour (Update)**
+  - Emplacement : `\\SRV-AD\Public`
+  - Lettre de lecteur : **Z:**
+  - Libellé : **Partage Public**
 
 #### 10.2.3 Paramétrages
 
 **1. Appliquer le fond d'écran**
 
-- Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau → Bureau → Fond d'écran`
+- Naviguer : **Configuration utilisateur → Modèles d'administration → Bureau → Bureau → Fond d'écran**
 - Activer la stratégie
 - Nom du papier peint : `\\SRV-AD\Public\wallpaper_ok.jpg`
-- Style : *Remplir* ou *Étendre*
+- Style : **Remplir** ou **Étendre**
 
 **2. Sécurité et Verrouillage**
 
--`Configuration utilisateur` > `Modèles d'administration` > `Panneau de configuration` > `Personnalisation`.
-- Paramètre : Empêcher de modifier l'arrière-plan du Bureau** réglé sur **Activé**.
-
+- **Configuration utilisateur > Modèles d'administration > Panneau de configuration > Personnalisation**
+- Paramètre : **Empêcher de modifier l'arrière-plan du Bureau** réglé sur **Activé**
 
 **3. Limiter les icônes du Bureau**
 
-Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau`
+Naviguer : **Configuration utilisateur → Modèles d'administration → Bureau**
 
 | Action sur le Bureau | Statut | Icône visible / masquée |
 |----------------------|--------|-------------------------|
@@ -366,29 +336,18 @@ Naviguer : `Configuration utilisateur → Modèles d'administration → Bureau`
 | Cacher l'icône Internet Explorer sur le Bureau | Activé | Masquée |
 | Cacher l'icône Emplacements réseau sur le Bureau | Activé | Masquée |
 
-### Résultat attendu :
+**Résultat attendu :** Seuls Poste de travail et Corbeille sont visibles après reconnexion
 
-> Seuls Poste de travail et Corbeille sont visibles après reconnexion
+**4. Délégation et Application Finale**
 
-**4.Délégation et Application Finale**
+- **Délégation :** Dans l'onglet Délégation, ajoutez le groupe **« Ordinateurs du domaine »** avec le droit **Lecture** pour permettre le chargement de l'image au démarrage
 
-Délégation : Dans l'onglet **Délégation**, ajoutez le groupe **« Ordinateurs du domaine »** avec le droit **Lecture** pour permettre le chargement de l'image au démarrage.
-    
-Application Client :
-    
-    1. Sur le poste de **jmartin**, lancez `gpupdate /force`.
-        
-    2. Si l'image ne s'affiche pas immédiatement, videz le cache dans `%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper`.
-        
-    3. **Redémarrez l'ordinateur** pour valider le mappage Z: et le fond d'écran.
+**Application Client :**
+1. Sur le poste de **jmartin**, lancez `gpupdate /force`
+2. Si l'image ne s'affiche pas immédiatement, videz le cache dans `%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper`
+3. **Redémarrez l'ordinateur** pour valider le mappage Z: et le fond d'écran
 
-### Résultat attendu :
-
-> wallpaper_ok.jpg appliqué pour tous les stagiaires.
-
-
-
----
+**Résultat attendu :** `wallpaper_ok.jpg` appliqué pour tous les stagiaires.
 
 ### 10.3 Vérifications
 
@@ -396,7 +355,7 @@ Application Client :
 
 - GPO liées aux OU
 - Partages et permissions NTFS
-- Délégation GPO : `Utilisateurs authentifiés → Lecture + Appliquer la stratégie`
+- Délégation GPO : Utilisateurs authentifiés → Lecture + Appliquer la stratégie
 
 #### 10.3.2 Sur le poste client
 
@@ -405,7 +364,7 @@ gpupdate /force
 gpresult /r
 ```
 
-Vérifier :
+**Vérifier :**
 - Bureau limité aux icônes autorisées
 - Fond d'écran appliqué correctement
 
@@ -433,7 +392,6 @@ reg query "HKCU\Control Panel\Desktop" /v Wallpaper
 ## Conclusion
 
 Ce TP vous a permis de mettre en place une infrastructure complète de gestion centralisée pour une PME, incluant :
-
 - L'attribution automatique d'adresses IP via DHCP
 - La résolution de noms via DNS
 - L'organisation des utilisateurs et ressources dans Active Directory
