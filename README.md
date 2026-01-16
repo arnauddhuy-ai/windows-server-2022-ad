@@ -157,11 +157,6 @@ Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et 
 
 Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et son propre DNS, condition indispensable au fonctionnement d’Active Directory.
 
-Console DHCP
-
-Étendue active avec plage IP visible
-  
-
 ### 5.3 Réservation DHCP
 
 **Exemple imprimante :**
