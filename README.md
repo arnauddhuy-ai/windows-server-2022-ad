@@ -438,7 +438,7 @@ Naviguer : **Configuration utilisateur → Modèles d'administration → Bureau*
 
 **Environnement de travail des stagiaires :**
 
-[Validation Stagiaire](9.%20Validation%20visuelle%20de%20l'environnement%20de%20travail%20des%20Stagiaires.PNG)
+![Validation Stagiaire](9.%20Validation%20visuelle%20de%20l'environnement%20de%20travail%20des%20Stagiaires.PNG)
 
 Cette capture confirme :
 
