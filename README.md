@@ -432,6 +432,20 @@ Naviguer : **Configuration utilisateur → Modèles d'administration → Bureau*
 2. Si l'image ne s'affiche pas immédiatement, videz le cache dans `%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper`
 3. **Redémarrez l'ordinateur** pour valider le mappage Z: et le fond d'écran
 
+**Capture :**
+
+- Bureau d’un utilisateur stagiaire connecté
+
+**Environnement de travail des stagiaires :**
+
+[Validation Stagiaire](9.%20Validation%20visuelle%20de%20l'environnement%20de%20travail%20des%20Stagiaires.PNG)
+
+Cette capture confirme :
+
+- L’application du fond d’écran imposé par la GPO
+- La limitation des icônes visibles sur le bureau
+- Le mappage automatique du lecteur réseau Z:
+
 **Résultat attendu :** `wallpaper_ok.jpg` appliqué pour tous les stagiaires.
 
 ### 10.3 Vérifications
