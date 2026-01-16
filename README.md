@@ -246,7 +246,7 @@ nslookup SRV-AD.entreprise.local
 
 **Organisation Active Directory :**
 
-[Structure AD](4.%20Organisation%20de%20l'Active%20Directory%20Structure%20des%20Unités%20d'Organisation%20(OU).PNG)
+![Structure AD](4.%20Organisation%20de%20l'Active%20Directory%20Structure%20des%20Unités%20d'Organisation%20(OU).PNG)
 
 Cette capture présente l’organisation des OU et des comptes utilisateurs dans Active Directory.
 
