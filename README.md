@@ -355,6 +355,16 @@ Cette stratégie empêche les utilisateurs de modifier les paramètres système 
 - Cocher : **Créer un dossier pour chaque utilisateur sous le chemin d'accès racine**
 - Chemin racine : `\\SRV-AD\Compta`
 
+**Capture :**
+
+- Paramétrage de la redirection Documents
+
+**Redirection des dossiers utilisateurs :**
+
+![GPO Redirection](7.%20Configuration%20de%20la%20GPO%20%20Redirection%20du%20dossier%20Documents%20vers%20le%20serveur.PNG)
+
+Cette configuration centralise les données utilisateurs sur le serveur et facilite la sauvegarde.
+
 **Résultat attendu :** Pour chaque utilisateur de l'OU Comptabilité, un dossier `\\SRV-AD\Compta\nom_utilisateur` est créé automatiquement et le dossier Documents est redirigé.
 
 ### 10.2 GPO Stagiaires_Politique
