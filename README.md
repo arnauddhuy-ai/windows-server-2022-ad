@@ -151,7 +151,7 @@ Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et 
 - Console DHCP
 - Étendue active avec plage IP visible
 
-**Validation de la configuration IP du serveur :**
+**Validation de l’étendue DHCP :**
 
 ![Etendue DHCP](2.%20Etendue%20DHCP%20.PNG)
 
