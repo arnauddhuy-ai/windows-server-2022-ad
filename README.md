@@ -239,6 +239,17 @@ nslookup SRV-AD.entreprise.local
 - `G_Comptabilité`, `G_RH`, `G_IT`, `G_Stagiaires`
 - Ajouter chaque utilisateur dans son groupe respectif
 
+**Capture :**
+
+- Console ADUC
+- OU + utilisateurs visibles
+
+**Organisation Active Directory :**
+
+[Structure AD](4.%20Organisation%20de%20l'Active%20Directory%20Structure%20des%20Unités%20d'Organisation%20(OU).PNG)
+
+Cette capture présente l’organisation des OU et des comptes utilisateurs dans Active Directory.
+
 ---
 
 ## 8. Partages réseau et permissions
