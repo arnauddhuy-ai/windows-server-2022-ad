@@ -182,6 +182,18 @@ ping 192.168.77.10
 
 **Vérifiez :** IP dans la plage, passerelle correcte, DNS = serveur AD
 
+**Capture :**
+
+- ipconfig /all sur un client
+- IP dans la plage DHCP
+- DNS = 192.168.77.10
+
+**Validation de l’attribution DHCP côté client :**
+
+![Bail DHCP Client](3.%20Validation%20du%20bail%20DHCP%20sur%20le%20poste%20client%20(Client-01).PNG)
+
+Le poste client reçoit automatiquement une adresse IP via DHCP avec le serveur SRV-AD comme DNS.
+
 ---
 
 ## 6. Configuration DNS
