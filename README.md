@@ -290,6 +290,8 @@ C:\Partages\Public
 
 ![Console Partages](5.%20Console%20de%20gestion%20des%20ressources%20partagées%20sur%20SRV-AD.PNG)
 
+Les permissions NTFS et de partage garantissent un accès contrôlé aux ressources selon les groupes.
+
 **Résultat attendu :** Chaque groupe accède uniquement à ses ressources.
 
 ---
