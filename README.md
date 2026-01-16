@@ -110,12 +110,12 @@ Vérifiez que le serveur utilise son IP comme DNS (`192.168.77.10`)
 ipconfig /all
 ping 192.168.77.10
 ```
-**Capture à mettre**
+**Capture à mettre :**
 
 - ipconfig /all sur SRV-AD
 - IP fixe + DNS = 192.168.77.10
   
-### Validation de la configuration IP du serveur
+**Validation de la configuration IP du serveur :**
 
 ![Configuration IP](1.%20Configuration%20IP%20du%20Serveur%20SRV-AD%20.PNG)
 
