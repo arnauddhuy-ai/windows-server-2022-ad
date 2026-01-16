@@ -117,7 +117,7 @@ ping 192.168.77.10
   
 ### Validation de la configuration IP du serveur
 
-![Configuration IP](1.%20Configuration%20IP%20du%20Serveur%20SRV-AD.png)
+![Validation Finale](9.%20Validation%20visuelle%20de%20l'environnement%20de%20travail%20des%20Stagiaires.png)
 
 Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et son propre DNS, condition indispensable au fonctionnement d’Active Directory.
 
