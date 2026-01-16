@@ -338,6 +338,16 @@ whoami
 - Naviguer : **Configuration utilisateur → Modèles d'administration → Panneau de configuration**
 - Paramètre : **Activé**
 
+**Capture :**
+
+- Paramètre GPO activé
+
+**Sécurisation du poste – GPO Comptabilité :**
+
+![GPO Sécurité](6.%20Sécurisation%20des%20postes%20GPO%20d'interdiction%20d'accès%20au%20Panneau%20de%20configuration.PNG)
+
+Cette stratégie empêche les utilisateurs de modifier les paramètres système sensibles.
+
 **2. Redirection du dossier Documents**
 
 - Naviguer : **Configuration utilisateur → Stratégies → Paramètres Windows → Redirection de dossiers → Documents**
