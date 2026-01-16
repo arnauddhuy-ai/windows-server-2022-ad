@@ -304,6 +304,14 @@ Doit être : `192.168.77.10`
 ```cmd
 whoami
 ```
+**Capture :**
+
+- Propriétés du dossier Public
+- Onglet Sécurité ou Partage
+
+**Validation des partages réseau :**
+
+![Console Partages](5.%20Console%20de%20gestion%20des%20ressources%20partagées%20sur%20SRV-AD.PNG)
 
 **Résultat attendu :** `entreprise\utilisateur`
 
