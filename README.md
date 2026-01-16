@@ -110,7 +110,7 @@ Vérifiez que le serveur utilise son IP comme DNS (`192.168.77.10`)
 ipconfig /all
 ping 192.168.77.10
 ```
-**Capture à mettre :**
+**Capture :**
 
 - ipconfig /all sur SRV-AD
 - IP fixe + DNS = 192.168.77.10
@@ -145,6 +145,22 @@ Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et 
    - Masque : `255.255.255.0`
    - Passerelle (Option 003) : `192.168.77.1`
    - DNS préféré (Option 006) : `192.168.77.10`
+
+**Capture :**
+
+- Console DHCP
+- Étendue active avec plage IP visible
+
+### Validation de la configuration IP du serveur
+
+![Etendue DHCP](2.%20Etendue%20DHCP%20.PNG)
+
+Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et son propre DNS, condition indispensable au fonctionnement d’Active Directory.
+
+Console DHCP
+
+Étendue active avec plage IP visible
+  
 
 ### 5.3 Réservation DHCP
 
