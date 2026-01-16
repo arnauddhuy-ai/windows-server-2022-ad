@@ -110,6 +110,21 @@ Vérifiez que le serveur utilise son IP comme DNS (`192.168.77.10`)
 ipconfig /all
 ping 192.168.77.10
 ```
+**Capture à mettre**
+
+- ipconfig /all sur SRV-AD
+- IP fixe + DNS = 192.168.77.10
+  
+### Validation de la configuration IP du serveur
+
+![Configuration IP du serveur SRV-AD](captures/01-config-ip-srv-ad.png)
+
+Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et son propre DNS, condition indispensable au fonctionnement d’Active Directory.
+
+
+
+
+
 
 **Astuce :** Si le client ne répond pas au ping du serveur, il est nécessaire d'autoriser le protocole ICMPv4 dans le pare-feu du poste client :
 1. Ouvrir les Paramètres avancés du pare-feu sur le poste client
