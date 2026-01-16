@@ -322,7 +322,7 @@ whoami
 **2. Sécurité et Verrouillage**
 
 - **Configuration utilisateur > Modèles d'administration > Panneau de configuration > Personnalisation**
-- Paramètre : **Empêcher de modifier l'arrière-plan du Bureau** réglé sur **Activé**
+- Paramètre : **Empêcher de modifier l'arrière-plan du Bureau** réglé sur **Désactivé**
 
 **3. Limiter les icônes du Bureau**
 
