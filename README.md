@@ -344,7 +344,7 @@ whoami
 
 **Sécurisation du poste – GPO Comptabilité :**
 
-![GPO Sécurité](6.%20Sécurisation%20des%20postes%20GPO%20d'interdiction%20d'accès%20au%20Panneau%20de%20configuration.PNG)
+![GPO Sécurité](6.%20Sécurisation%20des%20postes%20%20GPO%20d'interdiction%20d'accès%20au%20Panneau%20de%20configuration.PNG)
 
 Cette stratégie empêche les utilisateurs de modifier les paramètres système sensibles.
 
