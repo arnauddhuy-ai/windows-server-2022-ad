@@ -385,6 +385,16 @@ Cette configuration centralise les données utilisateurs sur le serveur et facil
   - Lettre de lecteur : **Z:**
   - Libellé : **Partage Public**
 
+**Capture :**
+
+- Paramétrage du lecteur réseau
+
+**Automatisation du stockage – Lecteur Z:**
+
+![GPO Mappage](8.%20Automatisation%20du%20stockage%20%20Configuration%20du%20mappage%20réseau%20(Lecteur%20Z).PNG)
+
+Le lecteur réseau est automatiquement disponible à chaque ouverture de session.
+
 #### 10.2.3 Paramétrages
 
 **1. Appliquer le fond d'écran**
