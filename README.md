@@ -117,7 +117,7 @@ ping 192.168.77.10
   
 **Validation de la configuration IP du serveur :**
 
-![Configuration IP du Serveur SRV-AD](1.%20Configuration%20IP%20du%20Serveur%20SRV-AD%20.PNG)
+![Configuration IP du Serveur SRV-AD](01.%20Configuration%20IP%20du%20Serveur%20SRV-AD%20.PNG)
 
 Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et son propre DNS, condition indispensable au fonctionnement d’Active Directory.
 
@@ -153,7 +153,7 @@ Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et 
 
 **Validation de l’étendue DHCP :**
 
-![Etendue DHCP](2.%20Etendue%20DHCP%20.PNG)
+![Etendue DHCP](02.%20Etendue%20DHCP%20.PNG)
 
 Cette capture confirme que le serveur SRV-AD utilise une adresse IP statique et son propre DNS, condition indispensable au fonctionnement d’Active Directory.
 
@@ -185,7 +185,7 @@ ping 192.168.77.10
 
 **Validation de l’attribution DHCP côté client :**
 
-![Bail DHCP Client](3.%20Validation%20du%20bail%20DHCP%20sur%20le%20poste%20client%20(Client-01).PNG)
+![Bail DHCP Client](03.%20Validation%20du%20bail%20DHCP%20sur%20le%20poste%20client%20(Client-01).PNG)
 
 Le poste client reçoit automatiquement une adresse IP via DHCP avec le serveur SRV-AD comme DNS.
 
@@ -246,7 +246,7 @@ nslookup SRV-AD.entreprise.local
 
 **Organisation Active Directory :**
 
-![Structure AD](4.%20Organisation%20de%20l'Active%20Directory%20%20Structure%20des%20Unités%20d'Organisation%20(OU).PNG)
+![Structure AD](04.%20Organisation%20de%20l'Active%20Directory%20%20Structure%20des%20Unités%20d'Organisation%20(OU).PNG)
 
 Cette capture présente l’organisation des OU et des comptes utilisateurs dans Active Directory.
 
@@ -288,7 +288,7 @@ C:\Partages\Public
 
 **Validation des partages réseau :**
 
-![Console Partages](5.%20Console%20de%20gestion%20des%20ressources%20partagées%20sur%20SRV-AD.PNG)
+![Console Partages](05.%20Console%20de%20gestion%20des%20ressources%20partagées%20sur%20SRV-AD.PNG)
 
 Les permissions NTFS et de partage garantissent un accès contrôlé aux ressources selon les groupes.
 
@@ -344,7 +344,7 @@ whoami
 
 **Sécurisation du poste – GPO Comptabilité :**
 
-![GPO Sécurité](6.%20Sécurisation%20des%20postes%20%20GPO%20d'interdiction%20d'accès%20au%20Panneau%20de%20configuration.PNG)
+![GPO Sécurité](06.%20Sécurisation%20des%20postes%20%20GPO%20d'interdiction%20d'accès%20au%20Panneau%20de%20configuration.PNG)
 
 Cette stratégie empêche les utilisateurs de modifier les paramètres système sensibles.
 
@@ -361,7 +361,7 @@ Cette stratégie empêche les utilisateurs de modifier les paramètres système 
 
 **Redirection des dossiers utilisateurs :**
 
-![GPO Redirection](7.%20Configuration%20de%20la%20GPO%20%20Redirection%20du%20dossier%20Documents%20vers%20le%20serveur.PNG)
+![GPO Redirection](07.%20Configuration%20de%20la%20GPO%20%20Redirection%20du%20dossier%20Documents%20vers%20le%20serveur.PNG)
 
 Cette configuration centralise les données utilisateurs sur le serveur et facilite la sauvegarde.
 
@@ -391,7 +391,7 @@ Cette configuration centralise les données utilisateurs sur le serveur et facil
 
 **Automatisation du stockage – Lecteur Z:**
 
-![GPO Mappage](8.%20Automatisation%20du%20stockage%20%20Configuration%20du%20mappage%20réseau%20(Lecteur%20Z).PNG)
+![GPO Mappage](08.%20Automatisation%20du%20stockage%20%20Configuration%20du%20mappage%20réseau%20(Lecteur%20Z).PNG)
 
 Le lecteur réseau est automatiquement disponible à chaque ouverture de session.
 
@@ -438,7 +438,7 @@ Naviguer : **Configuration utilisateur → Modèles d'administration → Bureau*
 
 **Environnement de travail des stagiaires :**
 
-![Validation Stagiaire](9.%20Validation%20visuelle%20de%20l'environnement%20de%20travail%20des%20Stagiaires.PNG)
+![Validation Stagiaire](09.%20Validation%20visuelle%20de%20l'environnement%20de%20travail%20des%20Stagiaires.PNG)
 
 Cette capture confirme :
 
